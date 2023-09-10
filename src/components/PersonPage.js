@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { getPerson } from '../features/peopleSlice';
+import {  useSelector } from 'react-redux';
 import telephone from '../icons/telephone.png'
-import mail from '../icons/mail.png'
+import mail from '../icons/mail.png';
 
 export default function PersonPage() {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-  const [ person, setPerson ] = useState([])
-  console.log('person', person)
 
-  useEffect(() => {
-    dispatch(getPerson(id))
-      .then((res) => {
-        console.log('res', res)
-        setPerson(res.payload)
-      })
-  },[dispatch, id]);
+  const { id } = useParams();
+
+  const person = useSelector(state => state.suitsReducer.data[1].people[id])
 
   const { name, about, photo, phone, fax, email } = person
 

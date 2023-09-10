@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { getSuitsData } from '../features/suitsSlice';
 
 export default function Carousel({parentWidth}) {
   const [ currentIndex, setCurrentIndex ] = useState(0);
+  // const [ slides, setSlides ] = useState([])
 
   const slides = [
     {url: 'https://flxt.tmsimg.com/assets/p8630071_i_h8_ap.jpg', title: 'Suits1'},
