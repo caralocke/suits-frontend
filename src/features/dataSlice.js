@@ -11,8 +11,8 @@ export const getSuitsData = createAsyncThunk('suits/getData', async (thunkAPI) =
     })
 });
 
-export const suitsSlice = createSlice({
-  name: 'suits',
+export const dataSlice = createSlice({
+  name: 'data',
   initialState: {
     loading: false,
     data: [],
@@ -42,4 +42,4 @@ export const suitsSlice = createSlice({
   }
 });
 
-export default suitsSlice.reducer
+export default dataSlice.reducer

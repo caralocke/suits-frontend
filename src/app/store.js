@@ -1,17 +1,11 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import peopleReducer from '../features/peopleSlice';
-import suitsReducer from '../features/suitsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import dataReducer from '../features/dataSlice';
 import { devToolsEnhancer } from "redux-devtools-extension";
 
-const reducer =  combineReducers({
-  suitsReducer,
-  peopleReducer
-})
-
-const store =  configureStore({
+export default configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}),
-  reducer,
+  reducer: {
+    dataReducer
+  },
   devTools: [devToolsEnhancer({ realtime: true})]
 });
-
-export default store;

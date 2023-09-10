@@ -1,8 +1,7 @@
 import './App.css';
 import PeopleList from './components/PeopleList';
 import { useDispatch } from 'react-redux';
-import { getPeople } from './features/peopleSlice';
-import { getSuitsData } from './features/suitsSlice';
+import { getSuitsData } from './features/dataSlice';
 import PersonPage from './components/PersonPage';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -13,10 +12,6 @@ import AboutUs from './components/AboutUs';
 const App = () => {
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getPeople())
-  }, [dispatch])
 
   useEffect(() => {
     dispatch(getSuitsData())

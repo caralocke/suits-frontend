@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 export default function AboutUs() {
-  const about = useSelector(state => state?.suitsReducer?.data[0]?.about);
-  
+  const about = useSelector(state => state?.dataReducer?.data[0]?.about);
+
   return (
     <div className='about-us'>
       <div className='about-info-container'>

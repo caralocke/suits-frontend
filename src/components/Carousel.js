@@ -3,10 +3,9 @@ import { useSelector } from 'react-redux';
 
 export default function Carousel({parentWidth}) {
   const [ currentIndex, setCurrentIndex ] = useState(0);
-  // const [ slides, setSlides ] = useState([])
 
-  const state  = useSelector(state => state.suitsReducer)
-  const slides = useSelector(state =>  state?.suitsReducer?.data[2]?.slides)
+  const state  = useSelector(state => state.dataReducer)
+  const slides = useSelector(state =>  state?.dataReducer?.data[2]?.slides)
 
   const containerStyles = {
     height: '100%',

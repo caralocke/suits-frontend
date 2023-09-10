@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 export default function PersonCard(props) {
-  const suitsData = useSelector(state => state.suitsReducer)
+  const suitsData = useSelector(state => state.dataReducer)
   const people = props.people
 
   const navigate = useNavigate();

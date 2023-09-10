@@ -8,44 +8,47 @@ export default function PersonPage() {
 
   const { id } = useParams();
 
-  const person = useSelector(state => state.suitsReducer.data[1].people[id])
+  const state = useSelector(state => state?.dataReducer)
+  console.log('state', state)
+  const person = state?.data[1]?.people[id]
+  console.log('person', person)
 
-  const { name, about, photo, phone, fax, email } = person
+  
 
-  return (
+  return ( state.isSuccess ? ( 
     <div className='person-page'>
       <div className='info-section'>
         <div className='img-container'>
-          <img className='employee-photo' src={photo} alt={name}/>
+          <img className='employee-photo' src={person.photo} alt={person.name}/>
         </div>
         <div className='contact-container'>
           <h3 className='contact-label'>Contact Information:</h3>
           <div>
             <span className='contact-source'><img className='telephone' src={telephone} alt="telephone"/>Phone:
-              <a className='phone-link' href={`tel:${phone}`}>{phone}</a>
+              <a className='phone-link' href={`tel:${person.phone}`}>{person.phone}</a>
             </span>
           </div>
           <div>
           <span className='contact-source'>Fax:
-            <span className='fax-box'>{fax}</span>
+            <span className='fax-box'>{person.fax}</span>
           </span>
           </div>
           <div>
             <span className='contact-source'><img className='mail' src={mail} alt="mail"/>Email:
-              <a className='email-link' href={`email:${email}`}>{email}</a>
+              <a className='email-link' href={`email:${person.email}`}>{person.email}</a>
             </span>
           </div>          
         </div>
       </div>
       <div className='about-section'>
         <div className='display-name'>
-          <h1>{name}</h1>
+          <h1>{person.name}</h1>
           <h3>Role</h3>
         </div>
         <div className='about'>
           <div> 
             {
-              about?.map(section => (
+              person.about?.map(section => (
                 <p key={section.id}>{section.info}</p>
               ))
             }            
@@ -53,5 +56,6 @@ export default function PersonPage() {
         </div>
       </div>
     </div>
+  ) : <div> Loading </div>
   )
 }
