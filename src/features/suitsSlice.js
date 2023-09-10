@@ -17,7 +17,7 @@ export const suitsSlice = createSlice({
     loading: false,
     data: [],
     error: '',
-    isSuccess: ''
+    isSuccess: false
   },
   reducers: {},
   extraReducers: builder => {

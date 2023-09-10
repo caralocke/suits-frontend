@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-import { getSuitsData } from '../features/suitsSlice';
+import { useSelector } from 'react-redux';
 
 export default function Carousel({parentWidth}) {
   const [ currentIndex, setCurrentIndex ] = useState(0);
   // const [ slides, setSlides ] = useState([])
 
   const state  = useSelector(state => state.suitsReducer)
-  console.log('state', state)
-  const slideData = useSelector(state =>  state.suitsReducer.data[2])
-  console.log('slideData', slideData)
-  let slides = slideData?.slides
-  // const slides = [
-  //   {url: 'https://flxt.tmsimg.com/assets/p8630071_i_h8_ap.jpg', title: 'Suits1'},
-  //   {url: 'https://deadline.com/wp-content/uploads/2018/01/download-suits-season-7.jpg', title: 'Suits2'},
-  //   {url: 'https://www.usanetwork.com/sites/usablog/files/2022/06/suits-cast.jpg', title: 'Suits3'}
-  // ];
+  const slides = useSelector(state =>  state?.suitsReducer?.data[2]?.slides)
 
   const containerStyles = {
     height: '100%',
@@ -29,7 +20,6 @@ export default function Carousel({parentWidth}) {
     backgroundPosition: 'center',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundImage: `url(${slides[currentIndex].url})`
   };
 
   const leftArrowStyles = {
@@ -80,7 +70,7 @@ export default function Carousel({parentWidth}) {
 
   const getSlidesContainerStylesWithWidth = () => ({
     ...slidesContainerStyles,
-    width: parentWidth * slides.length,
+    
     transform: `translateX(${-(currentIndex * parentWidth)}px)`
   });
 
@@ -118,27 +108,25 @@ export default function Carousel({parentWidth}) {
   };
 
 
-  return ( state ? (
-    <div>Loading</div>
-  ) :
+  return ( state.data.length ? (
     <div style={containerStyles} className='carousel'>
-      <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
-      <div style={rightArrowStyles} onClick={handleNext}>⇨</div>
-      <div style={slidesContainerOverflowStyles}>
-        <div style={getSlidesContainerStylesWithWidth()}>{
-            slides.map((_, slideIndex) => (
-              <div className='carousel-photo' key={slideIndex} style={getSlideStylesWithBackground(slideIndex)}></div>
-            ))
-          }
-        </div>
-      </div>
-      <div style={dotsContainerStyles}>
-        {slides.map((slide, slideIndex) => (
-          <div className='carousel-button' style={dotStyles} key={slideIndex} onClick={() => goToImage(slideIndex)}>●</div>
-        ))}
+    <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
+    <div style={rightArrowStyles} onClick={handleNext}>⇨</div>
+    <div style={slidesContainerOverflowStyles}>
+      <div style={{...getSlidesContainerStylesWithWidth(), width: parentWidth * slides.length,}}>{
+          slides.map((_, slideIndex) => (
+            <div className='carousel-photo' key={slideIndex} style={{...getSlideStylesWithBackground(slideIndex), backgroundImage: `url(${slides[currentIndex].url})`}}></div>
+          ))
+        }
       </div>
     </div>
+    <div style={dotsContainerStyles}>
+      {slides.map((slide, slideIndex) => (
+        <div className='carousel-button' style={dotStyles} key={slideIndex} onClick={() => goToImage(slideIndex)}>●</div>
+      ))}
+    </div>
+  </div>
+  ) :
+  <div>Loading</div>
   )
 }
-
-// <div style={carouselStyles}></div>
