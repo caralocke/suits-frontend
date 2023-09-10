@@ -6,11 +6,16 @@ export default function Carousel({parentWidth}) {
   const [ currentIndex, setCurrentIndex ] = useState(0);
   // const [ slides, setSlides ] = useState([])
 
-  const slides = [
-    {url: 'https://flxt.tmsimg.com/assets/p8630071_i_h8_ap.jpg', title: 'Suits1'},
-    {url: 'https://deadline.com/wp-content/uploads/2018/01/download-suits-season-7.jpg', title: 'Suits2'},
-    {url: 'https://www.usanetwork.com/sites/usablog/files/2022/06/suits-cast.jpg', title: 'Suits3'}
-  ];
+  const state  = useSelector(state => state.suitsReducer)
+  console.log('state', state)
+  const slideData = useSelector(state =>  state.suitsReducer.data[2])
+  console.log('slideData', slideData)
+  let slides = slideData?.slides
+  // const slides = [
+  //   {url: 'https://flxt.tmsimg.com/assets/p8630071_i_h8_ap.jpg', title: 'Suits1'},
+  //   {url: 'https://deadline.com/wp-content/uploads/2018/01/download-suits-season-7.jpg', title: 'Suits2'},
+  //   {url: 'https://www.usanetwork.com/sites/usablog/files/2022/06/suits-cast.jpg', title: 'Suits3'}
+  // ];
 
   const containerStyles = {
     height: '100%',
@@ -113,7 +118,9 @@ export default function Carousel({parentWidth}) {
   };
 
 
-  return (
+  return ( state ? (
+    <div>Loading</div>
+  ) :
     <div style={containerStyles} className='carousel'>
       <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
       <div style={rightArrowStyles} onClick={handleNext}>⇨</div>
