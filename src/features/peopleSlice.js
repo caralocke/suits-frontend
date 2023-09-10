@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getPeople = createAsyncThunk('people/getPeople', async (thunkAPI) => {
-  return axios.get('http://localhost:3000/people')
+  return axios.get('http://localhost:3000/suits/people')
     .then(res => {
       console.log('getPeople res.data', res.data)
       return res.data
@@ -13,9 +13,9 @@ export const getPeople = createAsyncThunk('people/getPeople', async (thunkAPI) =
 });
 
 export const getPerson = createAsyncThunk('people/getPerson', async (id, thunkAPI) => {
-  return await axios.get(`http://localhost:3000/people/${id}`)
+  return await axios.get(`http://localhost:3000/suits/people/${id}`)
     .then(res => {
-      console.log('res.data', res.data)
+      console.log('getPerson res.data', res.data)
       return res.data
     })
 })

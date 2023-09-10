@@ -4,7 +4,7 @@ export default function NavBar() {
   return (
     <div className='nav-bar'>
       <div className='logo-container'>
-        <a href='/'><img className='logo-img' src='https://upload.wikimedia.org/wikipedia/en/a/a1/Title_card_for_the_US_TV_show_Suits.png' alt='logo'/></a>
+        <a href='/'><img className='logo-img' src='https://img.usanetwork.com/sites/nbcunbc/files/images/2019/7/16/Suits-S9-Logo-1920x1080.jpg?impolicy=nbc_com&imwidth=640&imdensity=1' alt='logo'/></a>
       </div>
       <div className='link-container'>
         <ul className='link-list'>

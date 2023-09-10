@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function PersonCard(props) {
   const navigate = useNavigate();
   const handleClick = (id) => {
-    navigate(`/people/${id}`)
+    navigate(`/attorneys/${id}`)
   }
 
   return ( props.people.loading === true ? (
