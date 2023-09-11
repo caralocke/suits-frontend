@@ -1,15 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import '../styles/PersonCard.css';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function PersonCard(props) {
-  const suitsData = useSelector(state => state.dataReducer)
-  const people = props.people
+  const suitsData = useSelector(state => state.dataReducer);
+  const people = props.people;
 
   const navigate = useNavigate();
   const handleClick = (id) => {
     navigate(`/attorneys/${id}`)
-  }
+  };
 
   return ( suitsData.loading === true ? (
     <div>loading</div>
@@ -26,4 +27,4 @@ export default function PersonCard(props) {
   }
   )
   )
-}
+};

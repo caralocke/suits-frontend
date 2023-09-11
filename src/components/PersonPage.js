@@ -1,17 +1,16 @@
-import React from 'react'
+import React from 'react';
+import '../styles/PersonPage.css';
 import { useParams } from 'react-router-dom';
 import {  useSelector } from 'react-redux';
-import telephone from '../icons/telephone.png'
+import telephone from '../icons/telephone.png';
 import mail from '../icons/mail.png';
 
 export default function PersonPage() {
 
   const { id } = useParams();
 
-  const state = useSelector(state => state?.dataReducer)
-  console.log('state', state)
-  const person = state?.data[1]?.people[id]
-  console.log('person', person)
+  const state = useSelector(state => state?.dataReducer);
+  const person = state?.data[1]?.people[id];
 
   
 
@@ -43,7 +42,7 @@ export default function PersonPage() {
       <div className='about-section'>
         <div className='display-name'>
           <h1>{person.name}</h1>
-          <h3>Role</h3>
+          <h3>{person.rank}</h3>
         </div>
         <div className='about'>
           <div> 
@@ -58,4 +57,4 @@ export default function PersonPage() {
     </div>
   ) : <div> Loading </div>
   )
-}
+};

@@ -1,0 +1,46 @@
+.nav-bar {
+  height: 8vh;
+  background-color: rgb(29, 28, 28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.list-item {
+  display: flex;
+  margin: 5px;
+  height: 45px;
+  width: 105px;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(34, 33, 33);
+  color: antiquewhite;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: gray;
+}
+
+a {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+}
+
+/* .logo-container {
+  padding: 1%;
+} */
+
+.logo-img {
+  height: 70px;
+  width: 175px;
+}

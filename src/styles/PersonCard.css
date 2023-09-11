@@ -1,0 +1,17 @@
+.person-card-container {
+  padding: 3%;
+  width: 300px;
+}
+
+.person-card {
+  background-color: antiquewhite;
+  padding: 5%;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+
+.person-image {
+  height: 275px;
+  width: 250px;
+  border-radius: 5%;
+}

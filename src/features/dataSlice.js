@@ -11,6 +11,16 @@ export const getSuitsData = createAsyncThunk('suits/getData', async (thunkAPI) =
     })
 });
 
+export const getLNOData = createAsyncThunk('lawandorder/getData', async (thunkAPI) => {
+  return axios.get('http://localhost:3000/lawandorder')
+    .then(res => {
+      return res.data
+    })
+    .catch(err => {
+      console.log('err', err)
+    })
+});
+
 export const dataSlice = createSlice({
   name: 'data',
   initialState: {
@@ -34,6 +44,25 @@ export const dataSlice = createSlice({
     });
 
     builder.addCase(getSuitsData.rejected, (state, action) =>{
+      state.loading = false
+      state.data = []
+      state.error = action.error.message
+      state.isSuccess = false
+    });
+
+    builder.addCase(getLNOData.pending, state => {
+      state.loading = true
+      state.isSuccess = false
+    });
+
+    builder.addCase(getLNOData.fulfilled, (state, action) => {
+      state.loading = false
+      state.data = action.payload
+      state.error = ''
+      state.isSuccess = true
+    });
+
+    builder.addCase(getLNOData.rejected, (state, action) =>{
       state.loading = false
       state.data = []
       state.error = action.error.message

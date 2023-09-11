@@ -1,0 +1,74 @@
+.about-us {
+  display: flex;
+  background-color: antiquewhite;
+}
+
+.about-info-container {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-text {
+  padding: 2%;
+}
+
+.about-us-info {
+  width: 423px;
+}
+
+.contact-us-form-container {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-us-form {
+  width:400px;
+  height:600px;
+  background-color: rgb(83, 80, 80);
+  border-radius: 5%;
+  padding: 2%;
+}
+
+.label-container {
+  text-align: left;
+  width: 308px;
+  padding: 2%;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  color: antiquewhite;
+}
+
+.asterisk {
+  color: rgb(199, 10, 10);
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+input {
+  height: 30px;
+  width: 300px;
+  border-radius: 5%;
+  background-color: antiquewhite;
+}
+
+textarea {
+  height: 100px;
+  width: 300px;
+  border-radius: 5%;
+  background-color: antiquewhite;
+}

@@ -1,23 +1,17 @@
 import React from 'react';
+import '../styles/ContactUs.css';
 import { useSelector } from 'react-redux';
-import '../styles/AboutUs.css';
 
-export default function AboutUs() {
-  const about = useSelector(state => state?.dataReducer?.data[0]?.about);
+export default function ContactUs() {
+
+  const show = useSelector(state => state?.dataReducer?.data[4]?.show[0]?.name);
 
   return (
-    <div className='about-us'>
-      <div className='about-info-container'>
-        <h1>About Us</h1>
-        <div className='about-us-text'>
-          {
-            about?.map(data => {
-              return (
-                <div className='about-us-info' key={data.id}>{data.info}</div>
-              )
-            })
-          }
-        </div>
+    <div className='contact-us-page'>
+      <div className='contact-us-section'>
+        <h2>Contact Us</h2>
+        <p className='contact-us-info'>This application can be completely customized to suit the needs of many different businesses. </p>
+        <p className='contact-us-info'>If this site for the show {show} interests you, please feel free to use the form to reach out to me.</p>
       </div>
       <div className='contact-us-form-container'>
         <form className='contact-us-form' method="post" action="https://formsubmit.co/847816be8e953105ed3f5481619f2da5">

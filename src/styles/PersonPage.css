@@ -1,0 +1,63 @@
+.person-page{
+  background-color: antiquewhite;
+  display: flex;
+  height: 100%;
+}
+
+.info-section {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin: auto;
+}
+
+.img-container {
+  padding-top: 15%;
+}
+
+.employee-photo {
+  width: 350px;
+}
+
+.contact-container {
+  padding-bottom: 20px;
+}
+
+.contact-label {
+  text-decoration: underline;
+}
+
+.phone-link {
+  color: rgb(192, 53, 53);
+  margin-left: 5px;
+}
+
+.telephone {
+  width: 15px;
+  height: 12px;
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.fax-box {
+  margin-left: 5px;
+}
+
+
+.email-link {
+  color: rgb(167, 10, 10);
+  margin-left: 5px;
+}
+
+.mail {
+  width: 15px;
+  height: 12px;
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.about-section {
+  width: 50%;
+  margin: auto;
+  padding-right: 5%;
+}
