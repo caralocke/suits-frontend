@@ -13,7 +13,7 @@ export default function Modal () {
   const lawOrder = 'lawandorder';
   const house = 'house';
   const [ theme, setTheme ] = useState(themeData);
-  const [ show, setShow ] = useState(showData);
+  const [ , setShow ] = useState(showData);
 
   useEffect(() => {
     document.body.className = theme
