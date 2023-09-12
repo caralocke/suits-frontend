@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 export default function ContactUs() {
 
   const show = useSelector(state => state?.dataReducer?.data[4]?.show[0]?.name);
+  const { REACT_APP_PERSONAL_EMAIL} = process.env;
 
   return (
     <div className='contact-us-page'>
@@ -15,7 +16,7 @@ export default function ContactUs() {
       </div>
       <div className='contact-us-form-container'>
         <form className='contact-us-form' method="post" action="https://formsubmit.co/847816be8e953105ed3f5481619f2da5">
-        <h2>Contact Us Now</h2>
+        <h2 className='form-title'>Contact Us Now</h2>
           <div className='inputs-container'>
 
             <div className='label-container'>
@@ -48,8 +49,8 @@ export default function ContactUs() {
             <div className='input-container'>
               <textarea name="message" id="message"></textarea>
             </div>
-            <div>
-              <button>Submit</button>
+            <div className='button-container'>
+              <button className='submit-button'>Submit</button>
             </div>
           </div>
         </form>

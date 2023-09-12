@@ -8,7 +8,8 @@ export default function Carousel({parentWidth}) {
   const slides = useSelector(state =>  state?.dataReducer?.data[2]?.slides)
 
   const containerStyles = {
-    height: '100%',
+    height: '75%',
+    paddingTop: '5%',
     position: 'relative'
   };
 
@@ -109,8 +110,8 @@ export default function Carousel({parentWidth}) {
 
   return ( state.data.length ? (
     <div style={containerStyles} className='carousel'>
-    <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
-    <div style={rightArrowStyles} onClick={handleNext}>⇨</div>
+    {/* <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
+    <div style={rightArrowStyles} onClick={handleNext}>⇨</div> */}
     <div style={slidesContainerOverflowStyles}>
       <div style={{...getSlidesContainerStylesWithWidth(), width: parentWidth * slides.length,}}>{
           slides.map((_, slideIndex) => (

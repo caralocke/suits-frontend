@@ -1,6 +1,9 @@
 .about-us {
   display: flex;
   background-color: antiquewhite;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
 }
 
 .about-info-container {

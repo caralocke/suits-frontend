@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export default function NavBar() {
   const state = useSelector(state => state.dataReducer);
   const navImg = useSelector(state => state?.dataReducer?.data[3]?.navbar[0]?.url);
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
   return ( state.isSuccess? (
     <div className='nav-bar'>
@@ -21,8 +21,8 @@ export default function NavBar() {
           <li className='list-item' onClick={() => navigate('/about-us')}>
             <a className='link' href='/about-us'>About Us</a>
           </li>
-          <li className='list-item' onClick={() => navigate('/attorneys')}>
-            <a className='link' href='/attorneys'>Attorneys</a>
+          <li className='list-item' onClick={() => navigate('/cast')}>
+            <a className='link' href='/cast'>Cast</a>
           </li>
           <li className='list-item' onClick={() => navigate('/contact')}>
             <a href='/contact'>Contact Us</a>

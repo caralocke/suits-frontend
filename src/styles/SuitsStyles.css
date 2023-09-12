@@ -1,0 +1,59 @@
+html {
+  margin: 0;
+  min-height: 100%;
+}
+html.suits, body.suits {
+  margin: 0;
+  min-height: 100%;
+  background-image: url('https://digitaltravelcouple.com/wp-content/uploads/2022/08/new-york-at-night-skyview.jpg.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Navbar */
+body.suits .nav-bar {
+  height: 8vh;
+  background-color: rgb(116, 4, 4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.suits ul li:hover {
+  background-color: rgb(94, 91, 91);
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Person Card */
+body.suits .person-card {
+  background-color: rgb(116, 4, 4);
+  color: antiquewhite;
+  padding: 5%;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+
+body.suits .person-card:hover {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Person Page */
+body.suits .person-page{
+  background-color: rgb(116, 4, 4);
+  color: antiquewhite;
+  margin: 5%;
+  border-radius: 5%;
+  display: flex;
+  height: 100%;
+}
+
+body.suits .phone-link {
+  color: rgb(243, 208, 208);
+  margin-left: 5px;
+}
+
+body.suits .email-link {
+  color: rgb(243, 208, 208);
+  margin-left: 5px;
+}

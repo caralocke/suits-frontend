@@ -1,7 +1,7 @@
 import './App.css';
 import PeopleList from './components/PeopleList';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSuitsData, getLNOData } from './features/dataSlice';
+import { getSuitsData, getLNOData, getHouseData } from './features/dataSlice';
 import PersonPage from './components/PersonPage';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -21,8 +21,10 @@ const App = () => {
     const showChoice = localStorage.getItem('showChoice')
      if (showChoice === 'suits') {
       dispatch(getSuitsData())
-    } else if (showChoice === 'lawAndOrder') {
+    } else if (showChoice === 'lawandorder') {
       dispatch(getLNOData())
+    } else if (showChoice === 'house') {
+      dispatch(getHouseData())
     }
   },[dispatch]);
 
@@ -36,8 +38,8 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<CarouselContainer/>}></Route>
         <Route path='/about-us' element={<AboutUs/>}></Route>
-        <Route path='/attorneys' element={<PeopleList/>}></Route>
-        <Route path='/attorneys/:id' element={<PersonPage/>}></Route>
+        <Route path='/cast' element={<PeopleList/>}></Route>
+        <Route path='/cast/:id' element={<PersonPage/>}></Route>
         <Route path='/contact' element={<ContactUs/>}></Route>
       </Routes>
     </div>

@@ -9,7 +9,7 @@ export default function PersonCard(props) {
 
   const navigate = useNavigate();
   const handleClick = (id) => {
-    navigate(`/attorneys/${id}`)
+    navigate(`/cast/${id}`)
   };
 
   return ( suitsData.loading === true ? (

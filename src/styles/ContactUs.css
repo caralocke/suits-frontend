@@ -1,5 +1,8 @@
 .contact-us-page {
   display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
   background-color: antiquewhite;
   padding: 2%;
 }
@@ -20,4 +23,22 @@
 
 .contact-us-form-container {
   padding: 2%;
+}
+
+.form-title {
+  color: antiquewhite;
+}
+
+.inputs-container {
+  padding: 2%;
+}
+
+.button-container {
+  padding: 5%;
+}
+
+.submit-button {
+  width: 306px;
+  height: 38px;
+  background-color: antiquewhite;
 }

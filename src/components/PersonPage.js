@@ -8,6 +8,7 @@ import mail from '../icons/mail.png';
 export default function PersonPage() {
 
   const { id } = useParams();
+  const { REACT_APP_PERSONAL_EMAIL } = process.env;
 
   const state = useSelector(state => state?.dataReducer);
   const person = state?.data[1]?.people[id];
@@ -34,7 +35,7 @@ export default function PersonPage() {
           </div>
           <div>
             <span className='contact-source'><img className='mail' src={mail} alt="mail"/>Email:
-              <a className='email-link' href={`email:${person.email}`}>{person.email}</a>
+              <a className='email-link' href={`mailto:${REACT_APP_PERSONAL_EMAIL}`}>{person.email}</a>
             </span>
           </div>          
         </div>

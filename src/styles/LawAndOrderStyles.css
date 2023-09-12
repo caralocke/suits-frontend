@@ -1,0 +1,26 @@
+body.lawandorder {
+  background-image: url('https://img.freepik.com/free-photo/interior-design-old-architecture_181624-141.jpg?w=1380&t=st=1694465516~exp=1694466116~hmac=b6b03c258da15406c61248258cc00f9686f4c55d41647bc9b7269b1ff8819835');
+  background-size: cover;
+}
+
+/* Navbar */
+body.lawandorder .nav-bar {
+  height: 8vh;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.lawandorder ul li:hover {
+  background-color: rgb(73, 48, 48);
+}
+
+/* Person Card */
+body.lawandorder .person-card {
+  background-color: antiquewhite;
+  color: rgb(124, 43, 43);
+  padding: 5%;
+  border: 1px solid gray;
+  border-radius: 5%;
+}

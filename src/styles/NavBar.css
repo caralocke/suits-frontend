@@ -1,5 +1,5 @@
 .nav-bar {
-  height: 8vh;
+  height: 70px;
   background-color: rgb(29, 28, 28);
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 }
 
 ul li:hover {
-  background-color: gray;
+  background-color: rgb(73, 48, 48);
 }
 
 a {
@@ -36,11 +36,11 @@ a {
   color: white;
 }
 
-/* .logo-container {
-  padding: 1%;
-} */
+.logo-container {
+  height: 100%;
+}
 
 .logo-img {
-  height: 70px;
-  width: 175px;
+  height: 100%;
+  width: 233px;
 }
