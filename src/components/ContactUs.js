@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 export default function ContactUs() {
 
-  const show = useSelector(state => state?.dataReducer?.data[4]?.show[0]?.name);
+  const show = useSelector(state => state.persistedReducer.data[4].show[0].name);
 
   return (
     <div className='contact-us-page'>

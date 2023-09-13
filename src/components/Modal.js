@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import '../styles/Modal.css';
 import { useDispatch } from 'react-redux';
 import { getData } from '../features/dataSlice';
@@ -12,12 +12,8 @@ export default function Modal () {
   const suits = 'suits';
   const lawOrder = 'lawandorder';
   const house = 'house';
-  const [ theme, setTheme ] = useState(themeData);
+  const [ , setTheme ] = useState(themeData);
   const [ , setShow ] = useState(showData);
-
-  useEffect(() => {
-    document.body.className = theme
-  }, [theme])
 
   const changeData = (data) => {
     setTheme(data)
@@ -25,6 +21,7 @@ export default function Modal () {
     dispatch(getData(data))
     localStorage.setItem('theme', data)
     localStorage.setItem('showChoice', data)
+    document.body.className = data
   }
 
   const handleSuits = () => {

@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
-  const state = useSelector(state => state?.dataReducer);
-  const navImg = useSelector(state => state?.dataReducer?.data[3]?.navbar[0]?.url);
+  const state = useSelector(state => state?.persistedReducer);
+  const navImg = useSelector(state => state?.persistedReducer?.data[3]?.navbar[0]?.url);
   const navigate = useNavigate();
 
   return ( state.isSuccess? (

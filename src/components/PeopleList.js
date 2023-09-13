@@ -5,8 +5,7 @@ import '../styles/PeopleList.css';
 
 export default function PeopleList() {
 
-  const peopleData = useSelector(state => state.dataReducer.data[1]);
-  let people = peopleData?.people;
+  const people = useSelector(state => state.persistedReducer.data[1].people);
 
   return ( 
     <div className='people-list'>

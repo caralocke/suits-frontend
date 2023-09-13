@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
-export default function Carousel({props, parentWidth}) {
-  console.log('props', props)
+export default function Carousel({ parentWidth}) {
   const [ currentIndex, setCurrentIndex ] = useState(0);
 
-  const state  = useSelector(state => state.dataReducer)
-  const slides = useSelector(state =>  state?.dataReducer?.data[2]?.slides)
+  const state  = useSelector(state => state.persistedReducer);
+  const slides = useSelector(state => state?.persistedReducer?.data[2]?.slides);
 
   const containerStyles = {
     height: '75%',
@@ -75,7 +74,7 @@ export default function Carousel({props, parentWidth}) {
   };
 
 
-  return ( state.data.length ? (
+  return ( state.data.length  && slides.length ? (
     <div style={containerStyles} className='carousel'>
     <div style={slidesContainerOverflowStyles}>
       <div style={{...getSlidesContainerStylesWithWidth(), width: parentWidth * slides.length,}}>{

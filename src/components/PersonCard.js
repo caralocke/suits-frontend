@@ -3,16 +3,16 @@ import '../styles/PersonCard.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-export default function PersonCard(props) {
-  const suitsData = useSelector(state => state.dataReducer);
-  const people = props.people;
+export default function PersonCard() {
+  const state = useSelector(state => state.persistedReducer);
+  const people = state.data[1].people;
 
   const navigate = useNavigate();
   const handleClick = (id) => {
     navigate(`/cast/${id}`)
   };
 
-  return ( suitsData.loading === true ? (
+  return ( state.loading === true ? (
     <div>loading</div>
   ) : people?.map(person => {
     return (

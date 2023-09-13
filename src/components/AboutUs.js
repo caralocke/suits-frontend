@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import '../styles/AboutUs.css';
 
 export default function AboutUs() {
-  const about = useSelector(state => state?.dataReducer?.data[0]?.about);
+  
+  const data = useSelector(state => state.persistedReducer.data[0].about)
 
   return (
     <div className='about-us'>
@@ -11,7 +12,7 @@ export default function AboutUs() {
         <h1>About Us</h1>
         <div className='about-us-text'>
           {
-            about?.map(data => {
+            data.map(data => {
               return (
                 <div className='about-us-info' key={data.id}>{data.info}</div>
               )

@@ -23,22 +23,21 @@ export default function Banner() {
   const changeData = (data) => {
     setTheme(data)
     setShow(data)
+    dispatch(getData(data))
     localStorage.setItem('theme', data)
     localStorage.setItem('showChoice', data)
+    document.body.className = data
   }
 
   const handleSuits = () => {
-    dispatch(getData(suits))
     changeData(suits)
   };
 
   const handleLNO = () => {
-    dispatch(getData(lawOrder))
     changeData(lawOrder)
   };
 
   const handleHouse = () => {
-    dispatch(getData(house))
     changeData(house)
   };
 

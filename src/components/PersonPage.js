@@ -10,8 +10,8 @@ export default function PersonPage() {
   const { id } = useParams();
   const { REACT_APP_PERSONAL_EMAIL } = process.env;
 
-  const state = useSelector(state => state?.dataReducer);
-  const person = state?.data[1]?.people[id];
+  const state = useSelector(state => state?.persistedReducer);
+  const person = state.data[1].people[id];
 
   
 
