@@ -1,9 +1,9 @@
 .about-us {
   display: flex;
-  background-color: antiquewhite;
   width: 80%;
   margin: auto;
   margin-top: 2%;
+  background-color: antiquewhite;
 }
 
 .about-info-container {
@@ -47,7 +47,7 @@
 label {
   display: flex;
   justify-content: flex-start;
-  align-items: start;
+  align-items: flex-start;
   color: antiquewhite;
 }
 

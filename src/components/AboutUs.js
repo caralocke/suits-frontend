@@ -54,8 +54,8 @@ export default function AboutUs() {
             <div className='input-container'>
               <textarea name="message" id="message"></textarea>
             </div>
-            <div>
-              <button>Submit</button>
+            <div className='button-container'>
+              <button className='submit-button'>Submit</button>
             </div>
           </div>
         </form>

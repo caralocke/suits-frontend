@@ -4,14 +4,18 @@
 }
 
 .person-card {
-  background-color: antiquewhite;
+  background: antiquewhite;
   padding: 5%;
   border: 1px solid gray;
   border-radius: 5%;
+  height: 400;
+  width: 300;
 }
 
 .person-card:hover {
   border: 1px solid white;
+  height: 450;
+  width: 350;
 }
 
 .person-image {

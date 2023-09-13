@@ -30,12 +30,12 @@ body.suits .person-card {
   background-color: rgb(116, 4, 4);
   color: antiquewhite;
   padding: 5%;
-  border: 1px solid gray;
   border-radius: 5%;
 }
 
 body.suits .person-card:hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 6px 6px 4px rgba(238, 229, 229, 0.5);
+  border: 1px inset white;
 }
 
 /* Person Page */
@@ -56,4 +56,97 @@ body.suits .phone-link {
 body.suits .email-link {
   color: rgb(243, 208, 208);
   margin-left: 5px;
+}
+
+body.suits .fax-box {
+  color: white;
+}
+
+/* About Us */
+
+body.suits .about-us {
+  display: flex;
+  background-color: rgb(116, 4, 4);
+  color: antiquewhite;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+body.suits .contact-us-form {
+  width:400px;
+  height:600px;
+  background-color: antiquewhite;
+  color: rgb(116, 4, 4);
+  border: 1px solid rgb(160, 3, 3);
+  box-shadow: 2px 2px 4px rgb(19, 18, 18);
+  border-radius: 5%;
+  padding: 2%;
+}
+
+body.suits label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: rgb(116, 4, 4);
+}
+
+body.suits input {
+  height: 30px;
+  width: 300px;
+  border: 1px solid rgb(160, 3, 3);
+  background-color: white;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+body.suits textarea {
+  height: 100px;
+  width: 300px;
+  border: 1px solid rgb(160, 3, 3);
+  background-color: white;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+/* Contact Us */
+
+body.suits .contact-us-page {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  background-color: rgb(116, 4, 4);
+  color: antiquewhite;
+  padding: 1%;
+}
+
+body.suits .contact-us-section {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body.suits .contact-us-info {
+  width: 80%;
+}
+
+body.suits .form-title {
+  color: rgb(116, 4, 4);
+}
+
+body.suits .inputs-container {
+  padding: 2%;
+}
+
+body.suits .button-container {
+  padding: 5%;
+}
+
+body.suits .submit-button {
+  width: 306px;
+  height: 38px;
+  color: antiquewhite;
+  background-color: rgb(160, 3, 3);
 }

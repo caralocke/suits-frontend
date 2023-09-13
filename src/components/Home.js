@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function 
-t() {
+export default function Home() {
   return (
     <div className='home-page'>
-      <img className='home-image' src='' alt=''/>
+      <h1>Home</h1>
     </div>
   )
 }

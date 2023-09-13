@@ -2,45 +2,59 @@ html {
   margin: 0;
   min-height: 100%;
 }
-html.suits, body.suits {
+html.house, body.house {
   margin: 0;
   min-height: 100%;
-  background-image: url('https://digitaltravelcouple.com/wp-content/uploads/2022/08/new-york-at-night-skyview.jpg.webp');
+  background-image: url('https://img.freepik.com/free-photo/stethoscope-copy-space_23-2147652347.jpg?w=1380&t=st=1694538041~exp=1694538641~hmac=af0c465ea020c4c8351a8eae5fa0cdd2736c98e32b63693a09ed57f801dc5bfb');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 /* Navbar */
-body.suits .nav-bar {
+body.house .nav-bar {
   height: 8vh;
-  background-color: rgb(116, 4, 4);
+  background-color: rgb(18, 92, 177);
+  border-top: 1px groove rgb(247, 247, 252);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-body.suits ul li:hover {
-  background-color: rgb(94, 91, 91);
+body.house .list-item {
+  display: flex;
+  margin: 5px;
+  height: 45px;
+  width: 105px;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(3, 53, 160);
+  color: antiquewhite;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+body.house ul li:hover {
+  background-color: rgb(86, 142, 226);
   box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 /* Person Card */
-body.suits .person-card {
-  background-color: rgb(116, 4, 4);
+body.house .person-card {
+  background-color: rgb(18, 92, 177);
   color: antiquewhite;
   padding: 5%;
-  border: 1px solid gray;
   border-radius: 5%;
 }
 
-body.suits .person-card:hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+body.house .person-card:hover {
+  box-shadow: 6px 6px 4px rgb(255, 255, 255);
+  border: 1px inset rgb(18, 92, 177);
 }
 
 /* Person Page */
-body.suits .person-page{
-  background-color: rgb(116, 4, 4);
+body.house .person-page{
+  background-color: rgb(18, 92, 177);
   color: antiquewhite;
   margin: 5%;
   border-radius: 5%;
@@ -48,12 +62,104 @@ body.suits .person-page{
   height: 100%;
 }
 
-body.suits .phone-link {
+body.house .phone-link {
   color: rgb(243, 208, 208);
   margin-left: 5px;
 }
 
-body.suits .email-link {
+body.house .email-link {
   color: rgb(243, 208, 208);
   margin-left: 5px;
+}
+
+body.house .fax-box {
+  color: white;
+}
+
+/* About Us */
+
+body.house .about-us {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+body.house .contact-us-form {
+  width:400px;
+  height:600px;
+  background-color: rgb(18, 92, 177);
+  border: 1px solid rgb(3, 53, 160);
+  box-shadow: 2px 2px 4px rgb(19, 18, 18);
+  border-radius: 5%;
+  padding: 2%;
+}
+
+body.house label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+}
+
+body.house input {
+  height: 30px;
+  width: 300px;
+  border: 1px solid rgb(3, 53, 160);
+  background-color: white;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+body.house textarea {
+  height: 100px;
+  width: 300px;
+  border: 1px solid rgb(3, 53, 160);
+  background-color: white;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+/* Contact Us */
+
+body.house .contact-us-page {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  padding: 1%;
+}
+
+body.house .contact-us-section {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body.house .contact-us-info {
+  /* padding: 2%; */
+  width: 80%;
+}
+
+body.house .form-title {
+  color: antiquewhite;
+}
+
+body.house .inputs-container {
+  padding: 2%;
+}
+
+body.house .button-container {
+  padding: 5%;
+}
+
+body.house .submit-button {
+  width: 306px;
+  height: 38px;
+  border: 1px outset rgb(3, 53, 160);
+  border-radius: 5%;
+  background-color: white;
 }

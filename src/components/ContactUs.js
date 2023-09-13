@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 export default function ContactUs() {
 
   const show = useSelector(state => state?.dataReducer?.data[4]?.show[0]?.name);
-  const { REACT_APP_PERSONAL_EMAIL} = process.env;
 
   return (
     <div className='contact-us-page'>

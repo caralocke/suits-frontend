@@ -4,7 +4,7 @@ import '../styles/SuitsStyles.css'
 import '../styles/LawAndOrderStyles.css'
 import '../styles/HouseStyles.css'
 import { useDispatch } from 'react-redux';
-import { getSuitsData, getLNOData, getHouseData } from '../features/dataSlice';
+import { getData } from '../features/dataSlice';
 
 export default function Banner() {
   const dispatch = useDispatch();
@@ -28,17 +28,17 @@ export default function Banner() {
   }
 
   const handleSuits = () => {
-    dispatch(getSuitsData())
+    dispatch(getData(suits))
     changeData(suits)
   };
 
   const handleLNO = () => {
-    dispatch(getLNOData())
+    dispatch(getData(lawOrder))
     changeData(lawOrder)
   };
 
   const handleHouse = () => {
-    dispatch(getHouseData())
+    dispatch(getData(house))
     changeData(house)
   };
 

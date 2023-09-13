@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
-  const state = useSelector(state => state.dataReducer);
+  const state = useSelector(state => state?.dataReducer);
   const navImg = useSelector(state => state?.dataReducer?.data[3]?.navbar[0]?.url);
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
 
   return ( state.isSuccess? (
     <div className='nav-bar'>
@@ -15,16 +15,16 @@ export default function NavBar() {
       </div>
       <div className='link-container'>
         <ul className='link-list' >
-        <li className='list-item' onClick={() => navigate('/')}>
+        <li className='list-item' value={'/'} onClick={() => navigate('/')}>
             <a className='link' href='/'>Home</a>
           </li>
-          <li className='list-item' onClick={() => navigate('/about-us')}>
+          <li className='list-item' value={'/about-us'} onClick={() => navigate('/about-us')}>
             <a className='link' href='/about-us'>About Us</a>
           </li>
-          <li className='list-item' onClick={() => navigate('/cast')}>
+          <li className='list-item' value={'/cast'} onClick={() => navigate('/cast')}>
             <a className='link' href='/cast'>Cast</a>
           </li>
-          <li className='list-item' onClick={() => navigate('/contact')}>
+          <li className='list-item' value={'/contact'} onClick={() => navigate('/contact')}>
             <a href='/contact'>Contact Us</a>
           </li>
         </ul>

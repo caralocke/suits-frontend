@@ -1,35 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getSuitsData = createAsyncThunk('suits/getData', async (thunkAPI) => {
-  return axios.get('http://localhost:3000/suits')
-    .then (res => {
-      return res.data
-    })
-    .catch(err => {
-      console.log('err', err)
-    })
-});
-
-export const getLNOData = createAsyncThunk('lawandorder/getData', async (thunkAPI) => {
-  return axios.get('http://localhost:3000/lawandorder')
-    .then(res => {
-      return res.data
-    })
-    .catch(err => {
-      console.log('err', err)
-    })
-});
-
-export const getHouseData = createAsyncThunk('house/getData', async (thunkAPI) => {
-  return axios.get('http://localhost:3000/house')
-    .then(res => {
-      return res.data
-    })
-    .catch(err => {
-      console.log('err', err)
-    })
-});
+export const getData = createAsyncThunk('show/getData', async (show, thunkAPI) => {
+  return axios.get(`http://localhost:3000/${show}`)
+      .then(res => {
+        return res.data
+      })
+      .catch(err => {
+        console.log('err', err)
+      })
+})
 
 export const dataSlice = createSlice({
   name: 'data',
@@ -41,62 +21,24 @@ export const dataSlice = createSlice({
   },
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(getSuitsData.pending, state => {
+    builder.addCase(getData.pending, state => {
       state.loading = true
       state.isSuccess = false
     });
 
-    builder.addCase(getSuitsData.fulfilled, (state, action) => {
+    builder.addCase(getData.fulfilled, (state, action) => {
       state.loading = false
       state.data = action.payload
       state.error = ''
       state.isSuccess = true
     });
 
-    builder.addCase(getSuitsData.rejected, (state, action) =>{
+    builder.addCase(getData.rejected, (state, action) => {
       state.loading = false
       state.data = []
       state.error = action.error.message
       state.isSuccess = false
-    });
-
-    builder.addCase(getLNOData.pending, state => {
-      state.loading = true
-      state.isSuccess = false
-    });
-
-    builder.addCase(getLNOData.fulfilled, (state, action) => {
-      state.loading = false
-      state.data = action.payload
-      state.error = ''
-      state.isSuccess = true
-    });
-
-    builder.addCase(getLNOData.rejected, (state, action) =>{
-      state.loading = false
-      state.data = []
-      state.error = action.error.message
-      state.isSuccess = false
-    });
-
-    builder.addCase(getHouseData.pending, state => {
-      state.loading = true
-      state.isSuccess = false
-    });
-
-    builder.addCase(getHouseData.fulfilled, (state, action) => {
-      state.loading = false
-      state.data = action.payload
-      state.error = ''
-      state.isSuccess = true
-    });
-
-    builder.addCase(getHouseData.rejected, (state, action) =>{
-      state.loading = false
-      state.data = []
-      state.error = action.error.message
-      state.isSuccess = false
-    });
+    })
   }
 });
 

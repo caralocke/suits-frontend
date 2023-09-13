@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import '../styles/Modal.css';
 import { useDispatch } from 'react-redux';
-import { getSuitsData, getLNOData, getHouseData } from '../features/dataSlice';
+import { getData } from '../features/dataSlice';
 import { useNavigate } from 'react-router-dom';
 
 export default function Modal () {
@@ -22,24 +22,22 @@ export default function Modal () {
   const changeData = (data) => {
     setTheme(data)
     setShow(data)
+    dispatch(getData(data))
     localStorage.setItem('theme', data)
     localStorage.setItem('showChoice', data)
   }
 
   const handleSuits = () => {
-    dispatch(getSuitsData())
     changeData(suits)
     navigate('/')
   };
 
   const handleLNO = () => {
-    dispatch(getLNOData())
     changeData(lawOrder)
     navigate('/')
   };
 
   const handleHouse = () => {
-    dispatch(getHouseData())
     changeData(house)
     navigate('/')
   }

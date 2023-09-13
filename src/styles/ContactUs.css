@@ -4,7 +4,6 @@
   margin: auto;
   margin-top: 2%;
   background-color: antiquewhite;
-  padding: 2%;
 }
 
 .contact-us-section {
@@ -17,12 +16,7 @@
 }
 
 .contact-us-info {
-  padding: 2%;
   width: 424px;
-}
-
-.contact-us-form-container {
-  padding: 2%;
 }
 
 .form-title {

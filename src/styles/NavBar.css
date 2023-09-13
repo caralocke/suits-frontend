@@ -20,10 +20,15 @@
   width: 105px;
   text-decoration: none;
   text-align: center;
-  background-color: rgb(34, 33, 33);
+  background: rgb(34, 33, 33);
+  transition: background-color .5s ease-in;
   color: antiquewhite;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+.selected-list-item {
+  border-bottom: 2px solid white;
 }
 
 ul li:hover {

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
-export default function Carousel({parentWidth}) {
+export default function Carousel({props, parentWidth}) {
+  console.log('props', props)
   const [ currentIndex, setCurrentIndex ] = useState(0);
 
   const state  = useSelector(state => state.dataReducer)
@@ -20,28 +21,6 @@ export default function Carousel({parentWidth}) {
     backgroundPosition: 'center',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-  };
-
-  const leftArrowStyles = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translate(0, -50%)',
-    left: '32px',
-    fontSize: '45px',
-    color: '#fff',
-    zIndex: 1,
-    cursor: 'pointer'
-  };
-
-  const rightArrowStyles = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translate(0, -50%)',
-    right: '32px',
-    fontSize: '45px',
-    color: '#fff',
-    zIndex: 1,
-    cursor: 'pointer'
   };
 
   const dotsContainerStyles = {
@@ -91,18 +70,6 @@ export default function Carousel({parentWidth}) {
     return () => clearTimeout(timer)
   },[currentIndex]);
 
-  const handlePrevious = () => {
-    const firstImage = currentIndex === 0;
-    const newIndex = firstImage ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex)
-  };
-
-  const handleNext = () => {
-    const lastSlide = currentIndex === slides.length - 1;
-    const newIndex = lastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  };
-
   const goToImage = slideIndex => {
     setCurrentIndex(slideIndex)
   };
@@ -110,8 +77,6 @@ export default function Carousel({parentWidth}) {
 
   return ( state.data.length ? (
     <div style={containerStyles} className='carousel'>
-    {/* <div style={leftArrowStyles} onClick={handlePrevious}>⇦</div>
-    <div style={rightArrowStyles} onClick={handleNext}>⇨</div> */}
     <div style={slidesContainerOverflowStyles}>
       <div style={{...getSlidesContainerStylesWithWidth(), width: parentWidth * slides.length,}}>{
           slides.map((_, slideIndex) => (
