@@ -2,6 +2,7 @@ html {
   margin: 0;
   min-height: 100%;
 }
+
 html.suits, body.suits {
   margin: 0;
   min-height: 100%;
@@ -15,9 +16,14 @@ html.suits, body.suits {
 body.suits .nav-bar {
   height: 8vh;
   background-color: rgb(116, 4, 4);
+  border-top: 1px groove rgb(247, 247, 252);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.list-item-selected {
+  border-bottom: 2px solid white;
 }
 
 body.suits ul li:hover {
@@ -36,6 +42,7 @@ body.suits .person-card {
 body.suits .person-card:hover {
   box-shadow: 6px 6px 4px rgba(238, 229, 229, 0.5);
   border: 1px inset white;
+  transform: scale(1.05);
 }
 
 /* Person Page */
@@ -71,6 +78,7 @@ body.suits .about-us {
   width: 80%;
   margin: auto;
   margin-top: 2%;
+  padding: 2%;
 }
 
 body.suits .contact-us-form {
@@ -116,7 +124,7 @@ body.suits .contact-us-page {
   margin-top: 2%;
   background-color: rgb(116, 4, 4);
   color: antiquewhite;
-  padding: 1%;
+  padding: 2%;
 }
 
 body.suits .contact-us-section {
@@ -149,4 +157,8 @@ body.suits .submit-button {
   height: 38px;
   color: antiquewhite;
   background-color: rgb(160, 3, 3);
+}
+
+.submit-button:hover {
+  border: 1px inset white;
 }

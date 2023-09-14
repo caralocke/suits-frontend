@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.selected-list-item {
+.list-item-selected {
   border-bottom: 2px solid white;
 }
 

@@ -65,7 +65,7 @@ export default function Carousel({ parentWidth}) {
       } else {
         setCurrentIndex(0)
       }
-    }, 3500);
+    }, 2500);
     return () => clearTimeout(timer)
   },[currentIndex]);
 

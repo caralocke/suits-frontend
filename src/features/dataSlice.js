@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const { REACT_APP_API_URL } = process.env
-console.log('api', REACT_APP_API_URL)
+const { REACT_APP_API_URL } = process.env;
 
 export const getData = createAsyncThunk('show/getData', async (show, thunkAPI) => {
   return axios.get(`${REACT_APP_API_URL}/${show}`)

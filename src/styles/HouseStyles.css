@@ -2,6 +2,7 @@ html {
   margin: 0;
   min-height: 100%;
 }
+
 html.house, body.house {
   margin: 0;
   min-height: 100%;
@@ -34,9 +35,13 @@ body.house .list-item {
   cursor: pointer;
 }
 
+.list-item-selected {
+  border-bottom: 2px solid white;
+}
+
 body.house ul li:hover {
   background-color: rgb(86, 142, 226);
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 4px 4px 6px rgba(10, 10, 10, 0.2);
 }
 
 /* Person Card */
@@ -49,7 +54,8 @@ body.house .person-card {
 
 body.house .person-card:hover {
   box-shadow: 6px 6px 4px rgb(255, 255, 255);
-  border: 1px inset rgb(18, 92, 177);
+  border: 1px outset rgb(18, 92, 177);
+  transform: scale(1.05);
 }
 
 /* Person Page */
@@ -84,6 +90,7 @@ body.house .about-us {
   width: 80%;
   margin: auto;
   margin-top: 2%;
+  padding: 2%;
 }
 
 body.house .contact-us-form {
@@ -93,7 +100,7 @@ body.house .contact-us-form {
   border: 1px solid rgb(3, 53, 160);
   box-shadow: 2px 2px 4px rgb(19, 18, 18);
   border-radius: 5%;
-  padding: 2%;
+  margin: 2%;
 }
 
 body.house label {
@@ -123,11 +130,11 @@ body.house textarea {
 
 body.house .contact-us-page {
   display: flex;
-  background-color: white;
   width: 80%;
   margin: auto;
   margin-top: 2%;
-  padding: 1%;
+  background-color: white;
+  padding: 2%;
 }
 
 body.house .contact-us-section {
@@ -140,7 +147,6 @@ body.house .contact-us-section {
 }
 
 body.house .contact-us-info {
-  /* padding: 2%; */
   width: 80%;
 }
 
@@ -159,7 +165,10 @@ body.house .button-container {
 body.house .submit-button {
   width: 306px;
   height: 38px;
-  border: 1px outset rgb(3, 53, 160);
   border-radius: 5%;
   background-color: white;
+}
+
+.submit-button:hover {
+  border: 1px inset white;
 }

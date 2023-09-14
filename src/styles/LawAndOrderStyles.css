@@ -1,5 +1,14 @@
-body.lawandorder {
+html {
+  margin: 0;
+  min-height: 100%;
+}
+
+html.lawandorder, body.lawandorder {
+  margin: 0;
+  min-height: 100%;
   background-image: url('https://img.freepik.com/free-photo/interior-design-old-architecture_181624-141.jpg?w=1380&t=st=1694465516~exp=1694466116~hmac=b6b03c258da15406c61248258cc00f9686f4c55d41647bc9b7269b1ff8819835');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -7,9 +16,14 @@ body.lawandorder {
 body.lawandorder .nav-bar {
   height: 8vh;
   background-color: antiquewhite;
+  border-top: 1px groove rgb(247, 247, 247);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+body.lawandorder .list-item-selected {
+  border-bottom: 2px solid rgb(172, 3, 3);
 }
 
 body.lawandorder ul li:hover {
@@ -23,4 +37,129 @@ body.lawandorder .person-card {
   padding: 5%;
   border: 1px solid gray;
   border-radius: 5%;
+}
+
+body.lawandorder .person-card:hover {
+  box-shadow: 6px 6px 4px rgb(255, 255, 255);
+  border: 1px outset rgb(18, 92, 177);
+  transform: scale(1.05);
+}
+
+/* Person Page */
+body.lawandorder .person-page{
+  background-color: antiquewhite;
+  color: rgb(37, 22, 1);
+  margin: 5%;
+  border-radius: 5%;
+  display: flex;
+  height: 100%;
+}
+
+body.lawandorder .phone-link {
+  color: rgb(37, 22, 1);
+  margin-left: 5px;
+}
+
+body.lawandorder .email-link {
+  color: rgb(37, 22, 1);
+  margin-left: 5px;
+}
+
+body.lawandorder .fax-box {
+  color: rgb(37, 22, 1);
+}
+
+/* About Us */
+
+body.lawandorder .about-us {
+  display: flex;
+  background-color: antiquewhite;
+  color: rgb(37, 22, 1);
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  padding: 2%;
+}
+
+body.lawandorder .contact-us-form {
+  width:400px;
+  height:600px;
+  background-color: rgb(37, 22, 1);
+  color: antiquewhite;
+  border: 1px solid rgba(26, 10, 1, 0.26);
+  box-shadow: 2px 2px 4px rgb(19, 18, 18);
+  border-radius: 5%;
+  margin: 2%;
+}
+
+body.lawandorder label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: antiquewhite;
+}
+
+body.lawandorder input {
+  height: 30px;
+  width: 300px;
+  border: 1px solid rgb(37, 22, 1);
+  background-color: antiquewhite;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+body.lawandorder textarea {
+  height: 100px;
+  width: 300px;
+  border: 1px solid rgb(37, 22, 1);
+  background-color: antiquewhite;
+  box-shadow: rgb(47, 52, 54) 1px 1px 4px 1px inset;
+}
+
+/* Contact Us */
+
+body.lawandorder .contact-us-page {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  background-color: antiquewhite;
+  color: rgb(37, 22, 1);
+  padding: 2%;
+}
+
+body.lawandorder .contact-us-section {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body.lawandorder .contact-us-info {
+  width: 80%;
+}
+
+body.lawandorder .form-title {
+  color: antiquewhite;
+}
+
+body.lawandorder .inputs-container {
+  padding: 2%;
+}
+
+body.lawandorder .button-container {
+  padding: 5%;
+}
+
+body.lawandorder .submit-button {
+  width: 306px;
+  height: 38px;
+  font-weight: bold;
+  color: rgb(37, 22, 1);
+  background-color: antiquewhite;
+}
+
+.submit-button:hover {
+  border: 1px inset white;
 }
