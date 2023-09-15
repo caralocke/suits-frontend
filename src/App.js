@@ -18,7 +18,7 @@ const App = () => {
   const name = useSelector(state => state.persistedReducer.data[4]?.show[0]?.name);
   const logo = useSelector(state => state.persistedReducer.data[3]?.navbar[0]?.url);
 
-  document.title = name
+  document.title = name || 'Choose a show'
 
 
   return ( !state.isSuccess && !state.loading && showChoice === null ? (
