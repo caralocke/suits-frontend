@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../styles/NavBar.css';
 import { useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Loader from './Loader';
 
 export default function NavBar() {
   const state = useSelector(state => state?.persistedReducer);
@@ -21,7 +22,7 @@ export default function NavBar() {
       })   
   },[location.pathname])  
 
-  return ( state.isSuccess? (
+  return ( !state.loading ? (
     <div className='nav-bar'>
       <div className='logo-container'>
         <a href='/'><img className='logo-img' src={navImg} alt='logo'/></a>
@@ -44,6 +45,6 @@ export default function NavBar() {
       </div>
     </div>
   ) :
-    <div>Loading</div>
+    <Loader/>
   )
 };

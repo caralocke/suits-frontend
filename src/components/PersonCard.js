@@ -2,9 +2,11 @@ import React from 'react';
 import '../styles/PersonCard.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
 
 export default function PersonCard() {
   const state = useSelector(state => state.persistedReducer);
+  console.log('personcardstate', state)
   const people = state.data[1].people;
 
   const navigate = useNavigate();
@@ -12,8 +14,8 @@ export default function PersonCard() {
     navigate(`/cast/${id}`)
   };
 
-  return ( state.loading === true ? (
-    <div>loading</div>
+  return ( state.loading ? (
+    <Loader/>
   ) : people?.map(person => {
     return (
       <div className='person-card-container' key={person.id}>

@@ -41,7 +41,7 @@ export default function Banner() {
     changeData(house)
   };
 
-  return (
+  return ( 
     <div className='banner-container'>
       <div className='banner-title-container'>
         <h3 className='banner-title'>Which version would you like to see?</h3>
@@ -52,5 +52,5 @@ export default function Banner() {
         <span className='banner-button' onClick={handleHouse}><img className='button-image' src='https://img.nbc.com/sites/nbcunbc/files/images/2018/5/30/House-Logo-1920x1080.jpg?impolicy=nbc_com&imwidth=640&imdensity=1' alt='House'/></span>
       </div>
     </div>
-  )
+  ) 
 };
