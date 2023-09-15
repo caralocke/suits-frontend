@@ -14,12 +14,9 @@ import ContactUs from './components/ContactUs';
 const App = () => {
 
   const state = useSelector(state => state.persistedReducer);
-  console.log('state', state)
-  const showChoice = localStorage.getItem('showChoice')
-  console.log('showChoice', showChoice)
+  const showChoice = localStorage.getItem('showChoice');
   const name = useSelector(state => state.persistedReducer.data[4]?.show[0]?.name);
-  const logo = useSelector(state => state.persistedReducer.data[3]?.navbar[0]?.url)
-  console.log(logo)
+  const logo = useSelector(state => state.persistedReducer.data[3]?.navbar[0]?.url);
 
   document.title = name
 

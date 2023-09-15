@@ -6,7 +6,6 @@ import Loader from './Loader';
 
 export default function PersonCard() {
   const state = useSelector(state => state.persistedReducer);
-  console.log('personcardstate', state)
   const people = state.data[1].people;
 
   const navigate = useNavigate();
