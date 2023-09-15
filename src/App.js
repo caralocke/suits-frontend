@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import CarouselContainer from './components/CarouselContainer';
 import AboutUs from './components/AboutUs';
 import Banner from './components/Banner';
-import Home from './components/Home';
+import Loader from './components/Loader';
 import Modal from './components/Modal';
 import ContactUs from './components/ContactUs';
 
@@ -15,17 +15,20 @@ const App = () => {
 
   const state = useSelector(state => state.persistedReducer);
   console.log('state', state)
-
-  const name = useSelector(state => state.persistedReducer.data[4].show[0].name);
-  const logo = useSelector(state => state.persistedReducer.data[3].navbar[0].url)
+  const showChoice = localStorage.getItem('showChoice')
+  console.log('showChoice', showChoice)
+  const name = useSelector(state => state.persistedReducer.data[4]?.show[0]?.name);
+  const logo = useSelector(state => state.persistedReducer.data[3]?.navbar[0]?.url)
   console.log(logo)
 
   document.title = name
 
 
-  return ( !state.isSuccess && !state.loading ? (
+  return ( !state.isSuccess && !state.loading && showChoice === null ? (
     <Modal/>
-  ) :
+  ) : state.loading ? (
+    <Loader/>
+  ):
     <div className="App">
       <Banner/>
       <NavBar/>
