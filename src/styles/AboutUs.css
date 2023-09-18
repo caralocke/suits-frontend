@@ -70,8 +70,10 @@ input {
 }
 
 textarea {
-  height: 100px;
-  width: 300px;
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 300px;
+  min-width: 300px;
   border-radius: 5%;
   background-color: antiquewhite;
 }
