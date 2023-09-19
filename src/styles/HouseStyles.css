@@ -6,7 +6,7 @@ html {
 html.house, body.house {
   margin: 0;
   min-height: 100%;
-  background-image: url('https://img.freepik.com/free-photo/stethoscope-copy-space_23-2147652347.jpg?w=1380&t=st=1694538041~exp=1694538641~hmac=af0c465ea020c4c8351a8eae5fa0cdd2736c98e32b63693a09ed57f801dc5bfb');
+  background-image: repeating-linear-gradient(135deg, rgba(254, 255, 254, 0.08) 0px, rgba(78, 78, 78, 0.08) 1px,transparent 1px, transparent 9px),repeating-linear-gradient(45deg, rgba(151, 21, 4, 0.08) 0px, rgba(153, 9, 9, 0.08) 1px,transparent 1px, transparent 9px),linear-gradient( rgb(247, 247, 252),rgb(18, 92, 177));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
